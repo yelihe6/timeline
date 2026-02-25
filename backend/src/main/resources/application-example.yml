@@ -1,0 +1,28 @@
+# 复制此文件为 application.yml 或 application-local.yml 并填写实际配置
+# 敏感信息也可通过环境变量设置，如 DB_PASSWORD、MAIL_PASSWORD
+
+server:
+  port: 8080
+
+spring:
+  mail:
+    host: smtp.qq.com
+    port: 587
+    username: your-email@example.com
+    password: your-mail-auth-code
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    default-encoding: UTF-8
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/time?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: your-db-password
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
